@@ -1,0 +1,13 @@
+type LandingUser @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  email: AWSEmail!
+  Mob: String!
+  Service: String!
+  StartDate: String!
+  EndDate: String!
+  StreetAddress: String
+  City: String
+  pincode: String!
+  DateTime: AWSDateTime
+}
