@@ -60,10 +60,8 @@ function FormUser() {
  
   async function handleSubmit(values) {
         await DataStore.save(
-      new LandingUser(values)
-  );
-  window.location.href="/";
-  }
+      new LandingUser(values)).then(() => alert("Thank for you Request our Team will contact you"))
+    }
 
 
   const { form } = useForm({
