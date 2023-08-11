@@ -115,7 +115,7 @@ export const Modal = ({ showModal, setShowModal }) => {
             <ModalWrapper showModal={showModal}>
               <ModalImg src={logo} alt='camera' />
               <ModalContent>
-              <FormUser/>
+              <FormUser e/> 
 
               </ModalContent>
               <CloseModalButton

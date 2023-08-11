@@ -7,8 +7,6 @@ import Row from 'react-bootstrap/Row';
 import { DataStore } from '@aws-amplify/datastore';
 import { LandingUser } from '../models';
 
-
-
 import "./styles.scss";
 
 // Reusable validation function for Yup
@@ -47,25 +45,33 @@ const yupSchema = yup.object().shape({
   EndDate:yup.string().required(),
 
   });
-  async function handleSubmit(values) {
-    await DataStore.save(
-      new LandingUser(values)
-  );
 
-  }
+  
+
+
 
 // const JoiSchema = Joi.object({
 //   username: Joi.string().required(),
 //   email: Joi.string().email({ tlds: false }).required(),
 //   password: Joi.string().required().min(6)
 // });
+
 function FormUser() {
+ 
+  async function handleSubmit(values) {
+        await DataStore.save(
+      new LandingUser(values)
+  );
+  window.location.href="/";
+  }
+
+
   const { form } = useForm({
     defaultValues: {name: "", email: "",Mob:"",Service:"",StartDate:"",EndDate:"",StreetAddress:"",City:"",pincode:""},
     validate: validateWithYup(yupSchema),
     // validate: validateWithJoi(JoiSchema),
     onSubmit: (values) => handleSubmit(values),
-    onError: (errors) => console.log("onError: ", errors)
+    onError: (errors) => alert (JSON.stringify(errors))
   });
 
   const [MyService, setMyService] = useState("");
