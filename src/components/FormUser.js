@@ -48,7 +48,6 @@ const yupSchema = yup.object().shape({
 
   });
   async function handleSubmit(values) {
-    console.log(values)
     await DataStore.save(
       new LandingUser(values)
   );
