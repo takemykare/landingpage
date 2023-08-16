@@ -33,7 +33,7 @@ function App(){
             </a>
             </div>
         </div>
-              
+        <Modal showModal={showModal} setShowModal={setShowModal} />
         <div className="content"  onClick={openModal} >
           <div className="title-holder">
             <h1>Get ready for the change.</h1>
@@ -53,14 +53,14 @@ function App(){
           </div>
            <div className="cta">Become our partner</div>
           </div> */}
-          
-          
-         
-          
-        
-        <Modal showModal={showModal} setShowModal={setShowModal} />
-        
+                
+           <div  className="content" >
+           <a href="https://forms.gle/niSFFeBNnvfu2mAn6">
+            <p className="cta" >Partner Us ?</p>   
+           </a></div>
+
      </div> 
+     
       </div>
     );
   }
